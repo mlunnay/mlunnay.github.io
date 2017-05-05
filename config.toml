@@ -14,7 +14,7 @@ googleAnalytics = ""
     navbarTitle          = "mlunnay.github.io"
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
-    socialAppearAtBottom = true
+    socialAppearAtBottom = false
     # set this to the section name if section is not post
     viewMorePostLink     = "/blog/"
 
@@ -75,11 +75,13 @@ googleAnalytics = ""
 [[menu.main]]
     name = "Categories"
     url = "/categories"
+    identifier = "fa fa-sitemap"
     weight = 2
 
 [[menu.main]]
     name = "Experiments"
     url = "/experiments"
+    identifier = "fa fa-flask"
     weight = 3
 	
 [[menu.main]]
