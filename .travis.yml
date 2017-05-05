@@ -1,0 +1,16 @@
+branches:
+  only:
+    - source                           # for Github Project Pages replace with "master"
+
+install:  
+  - rm -rf public || exit 0             # cleanup previous run
+script:  
+  - binaries/hugo --theme=hugo-future-imperfect	# Generate
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: public
+  target_branch: master
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: source
