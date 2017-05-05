@@ -5,7 +5,7 @@ branches:
 install:  
   - rm -rf public || exit 0             # cleanup previous run
 script:  
-  - binaries/hugo --theme=hugo-future-imperfect	# Generate
+  - binaries/hugo			# Generate
 deploy:
   provider: pages
   skip_cleanup: true
