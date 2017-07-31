@@ -4,7 +4,7 @@ title = "Personal site of Michael Lunnay"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "shortname"
+disqusShortname = ""
 googleAnalytics = ""
 
 [params]
@@ -35,8 +35,8 @@ googleAnalytics = ""
     # customJS             = ["default", "/path/to/file"]
 
     # Loading min files for exampleSite
-    customCSS            = ["/css/main.min.css"]
-    customJS             = ["/js/main.min.js"]
+    customCSS            = ["default", "/css/resume.css"]
+    #customJS             = ["/js/main.min.js"]
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
@@ -85,9 +85,14 @@ googleAnalytics = ""
     weight = 3
 	
 [[menu.main]]
+    name = "Resume"
+    url = "/resume"
+    weight = 4
+
+[[menu.main]]
     name = "About"
     url = "/about"
-    weight = 4
+    weight = 5
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area

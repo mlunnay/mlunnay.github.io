@@ -1,0 +1,81 @@
+{{ $.Scratch.Set "cssFiles" (slice "default" "/css/resume.css") }}
+{{ partial "general-title" . }}
+
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <div class="resume-wrapper">
+        <div class="resume-sidebar">
+            <div class="profile-container container-block">
+                <h1 class="resume-name">{{ .Params.name }}</h1>
+                <h3 class="resume-location">{{ .Params.location }}</h3>
+                <h3 class="resume-tagline">{{ .Params.tagline }}</h3>
+            </div>
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                    <li>
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto: mlunnay@gmail.com">mlunnay@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-globe"></i>
+                        <a href="{{ .Params.website.url }}">{{ .Params.website.title }}</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-github"></i>
+                        <a href="https://github.com/mlunnay">github.com/mlunnay</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+                {{ range .Params.education }}
+                <div class="item">
+                    <h4 class="degree">{{ .degree }}</h4>
+                    <h5 class="meta">{{ .institution }}</h5>
+                    <div class="time">{{ .year }}</div>
+                </div><!--//item-->
+				{{ end }}
+            </div>
+        </div>
+        <div class="resume-main">
+            <section class="experience-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>Work Experience</h2>
+                {{ range .Params.experience }}
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 class="job-title">{{ .title }}</h3>
+                                <div class="time">{{ .startDate }} - {{ .endDate }}</div>
+                            </div><!--//upper-row-->
+                            <div class="company">{{ .company }}, {{ .location }}</div>
+                        </div><!--//meta-->
+                        <div class="details">
+                            <p>{{ with .details }}{{ . | markdownify }}{{ end }}</p>
+                        </div><!--//details-->
+                    </div><!--//item-->
+                {{ end }}
+                <div class="item">
+                    <h3>Previous Experience</h3>
+                    <ul>
+                        {{ range .Params.previousExperience }}
+                            <li>{{ . }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </section>
+            <section class="projects-section">
+                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+                {{ range .Params.sideProjects }}
+                    <div class="item">
+                        <span class="project-title"><a href="{{ .url }}">{{ .name }}</a></span> - <span class="project-description">{{ with .description }}{{ . | markdownify }}{{ end }}</span>
+                    </div><!--//item-->
+				{{ end }}
+            </section>
+            <section class="skills-section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i>Technical Skills</h2>
+                {{ delimit .Params.skills ", " }}
+            </section>
+        </div>
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}
