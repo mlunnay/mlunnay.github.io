@@ -1,19 +1,41 @@
 .resume-wrapper { 
-  display: flex;
-  align-items: stretch;
-  height: 100%;
   width: 100%;
 }
 
 .resume-sidebar {
   background: #42A8C0;
   color: #fff;
-  order: 2;
-  width: 240px;
 }
+
+@media (min-width: 992px) {
+  .resume-wrapper { 
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+  }
+
+  .resume-sidebar {
+    background: #42A8C0;
+    color: #fff;
+    order: 2;
+    width: 240px;
+  }
+}
+
 
 .resume-sidebar .container-block {
   padding: 30px;
+}
+
+.resume-sidebar .education-container {
+  padding-top: 0px;
+}
+
+@media (min-width: 992px) {
+  .resume-sidebar .education-container {
+    padding-top: 30px;
+  }
 }
 
 .resume-sidebar .profile-container {
@@ -91,10 +113,18 @@
 }
 
 .resume-main {
-  order: 1;
-  background: #fff;
-  padding: 60px;
-  width: calc(100% - 240px);
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+  }
+
+@media (min-width: 992px) {
+  .resume-main {
+    order: 1;
+    background: #fff;
+    padding: 60px;
+    width: calc(100% - 240px);
+  }
 }
 
 .resume-main .section-title {
@@ -153,15 +183,25 @@
 }
 
 .resume-main .time {
-  position: absolute;
-  right: 0;
-  top: 0;
   color: #97AAC3;
 }
 
+@media (min-width: 992px) {
+  .resume-main .time {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 .resume-main .company {
-  margin-bottom: 10px;
   color: #97AAC3;
+}
+
+@media (min-width: 992px) {
+  .resume-main .company {
+    margin-bottom: 10px;
+  }
 }
 
 .resume-main .project-title {
